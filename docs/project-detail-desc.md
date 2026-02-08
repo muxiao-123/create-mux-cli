@@ -24,10 +24,13 @@ cz-config配置文件必须是cjs不然无法识别
 
 ## 代码规范
 
-husky + lint-staged
+husky + lint-staged + cz
+
+## 所需插件
+
+eslint prettier eslint-config-prettier eslint-plugin-prettier typescript-eslint
 @commitlint/cli
 @commitlint/config-conventional 配合提交钩子
 cz-conventional-changelog log日志
 cz-customizable 自定义提交样式
-
 cz-customizable 提交插件 需要配合 commitizen

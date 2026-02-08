@@ -3,8 +3,9 @@ import { fileURLToPath } from 'url'
 export default defineConfig(() => {
   return {
     entry: 'src/index.ts',
+    // outDir: 'dist',
     target: 'node20',
-    minify: true,
+    minify: false,
     inlineOnly: false as const,
     fixedExtension: false,
     plugins: [],
