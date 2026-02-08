@@ -36,7 +36,9 @@ function renderTemplate(src: string, dest: string, callbacks: Callbacks) {
     // 合并代替覆盖
     const existing = JSON.parse(fs.readFileSync(dest, 'utf8'))
     const newPackage = JSON.parse(fs.readFileSync(src, 'utf8'))
+    console.log(existing, newPackage)
     const pkg = sortDependencies(deepMerge(existing, newPackage))
+    console.log(pkg)
     fs.writeFileSync(dest, JSON.stringify(pkg, null, 2) + '\n')
     return
   }

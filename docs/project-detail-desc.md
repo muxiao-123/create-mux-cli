@@ -19,3 +19,15 @@
 5.tsdown 新一代ts文件打包工具6. ejs 模板引擎，通过传入参数渲染文件内容 合并vite（eslint等）配置
 
 husky commitentlint gitcz
+
+cz-config配置文件必须是cjs不然无法识别
+
+## 代码规范
+
+husky + lint-staged
+@commitlint/cli
+@commitlint/config-conventional 配合提交钩子
+cz-conventional-changelog log日志
+cz-customizable 自定义提交样式
+
+cz-customizable 提交插件 需要配合 commitizen

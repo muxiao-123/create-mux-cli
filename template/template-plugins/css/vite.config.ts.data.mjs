@@ -2,7 +2,7 @@
 export default function getData({ oldData }) {
   const autoPrefix = {
     name: 'autoPrefix',
-    importer: "import autoPrefix from 'autoPrefix'",
+    importer: "import autoPrefix from 'autoprefixer'",
     initializer: 'autoPrefix()',
   }
   const postcssPxToRem = {

@@ -5,7 +5,10 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "index.js",
+  "private": true,
+  "bin": {
+    "mux-cli": "index.js"
+  },
   "scripts": {
     "build": "tsdown",
     "test": "node test/index.ts",
@@ -69,10 +72,10 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/cz-customizable"
     },
     "cz-customizable": {
-      "config": "./.cz-config.js"
+      "config": ".cz-config.cjs"
     }
   }
 }

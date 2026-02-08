@@ -10,77 +10,72 @@ export const templateArr: Template[] = [
       {
         name: 'elementUI',
         display: 'ElementUI',
-        color: picocolors.bgCyan,
+        color: picocolors.cyan,
       },
       {
         name: 'vant',
         display: 'Vant',
-        color: picocolors.bgCyan,
+        color: picocolors.blue,
       },
       {
         name: 'tDesign',
         display: 'TDesign',
-        color: picocolors.bgCyan,
+        color: picocolors.green,
       },
     ],
   },
   {
     name: 'template-electron',
     display: 'Electron',
-    color: picocolors.bgYellow,
-  },
-  {
-    name: 'template-test',
-    display: 'test',
-    color: picocolors.bgGreen,
+    color: picocolors.yellow,
   },
 ]
 export const templateUI: TemplateUI[] = [
   {
     name: '',
     display: 'NoUI',
-    color: picocolors.bgCyan,
+    color: picocolors.cyan,
   },
   {
     name: 'element-ui',
     display: 'ElementUI',
-    color: picocolors.bgCyan,
+    color: picocolors.blue,
   },
   {
     name: 'vant',
     display: 'Vant',
-    color: picocolors.bgCyan,
+    color: picocolors.green,
   },
   {
     name: 't-design',
     display: 'TDesign',
-    color: picocolors.bgCyan,
+    color: picocolors.yellow,
   },
 ]
 export const templatePlugins: TemplateUI[] = [
   {
     name: '',
     display: 'No',
-    color: picocolors.bgCyan,
+    color: picocolors.cyan,
   },
   {
     name: 'css',
     display: 'css',
-    color: picocolors.bgCyan,
+    color: picocolors.blue,
   },
-  {
-    name: 'external-global',
-    display: 'external-global',
-    color: picocolors.bgCyan,
-  },
+  // {
+  //   name: 'external-global',
+  //   display: 'external-global',
+  //   color: picocolors.green,
+  // },
   {
     name: 'visualizer',
     display: 'visualizer',
-    color: picocolors.bgCyan,
+    color: picocolors.yellow,
   },
   {
     name: 'vite-compression',
     display: 'vite-compression',
-    color: picocolors.bgCyan,
+    color: picocolors.cyan,
   },
 ]

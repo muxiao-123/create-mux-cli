@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   types: [
     { value: 'init', name: 'init:     初始提交' },
     { value: 'feat', name: 'feat:     新特性、新功能' },

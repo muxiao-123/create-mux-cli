@@ -237,23 +237,25 @@ async function init() {
     await cb(dataStore)
   }
   console.log(Object.keys(dataStore))
-  // EJS模板渲染
-  preOrderDirectoryTraverse(
-    root,
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    () => {},
-    (filepath: string) => {
-      if (filepath.endsWith('.ejs')) {
-        const template = fs.readFileSync(filepath, 'utf-8')
-        const dest = filepath.replace(/\.ejs$/, '')
-        const content = ejs.render(template, dataStore[dest])
+  if (Object.keys(dataStore)) {
+    // EJS模板渲染
+    preOrderDirectoryTraverse(
+      root,
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      () => {},
+      (filepath: string) => {
+        if (filepath.endsWith('.ejs')) {
+          const template = fs.readFileSync(filepath, 'utf-8')
+          const dest = filepath.replace(/\.ejs$/, '')
+          const content = ejs.render(template, dataStore[dest])
 
-        fs.writeFileSync(dest, content)
-        fs.unlinkSync(filepath)
-      }
-    },
-  )
-  const pkg = JSON.parse(fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8'))
+          fs.writeFileSync(dest, content)
+          fs.unlinkSync(filepath)
+        }
+      },
+    )
+  }
+  const pkg = JSON.parse(fs.readFileSync(path.join(targetDir, `package.json`), 'utf-8'))
 
   pkg.name = packageName
 

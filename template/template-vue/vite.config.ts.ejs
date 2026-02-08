@@ -3,7 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 // import vueDevTools from 'vite-plugin-vue-devtools'
-import viteImagemin from 'vite-plugin-imagemin'
+
 import { resolve } from 'node:path'
 <%_ for (const { importer } of plugins) { _%>
 <%- importer %>
@@ -15,18 +15,6 @@ import { resolve } from 'node:path'
 export default defineConfig({
   plugins: [
     vue(),
-    vueJsx(),
-    // mkcert({
-    //   // hosts: []
-    // }),
-    basicSsl({
-      /** name of certification */
-      name: 'test',
-      /** custom trust domains */
-      // domains: ['*.custom.com'],
-      /** custom certification directory */
-      certDir: './cert',
-    }),
     // vueDevTools()
 <%_ for (const { initializer } of plugins) { _%>
   <%_ if (initializer) { _%>
@@ -71,10 +59,6 @@ export default defineConfig({
     minify: false,
     emptyOutDir: true,
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        aside: resolve(__dirname, 'src-first/index.html'),
-      },
       output: {
         // manualChunks(id) {
         //   if (id.includes('node_modules')) {
@@ -98,11 +82,11 @@ export default defineConfig({
           return '[ext]/[name]-[hash].[ext]'
         },
       },
-      external: [
-        'vue',
-        // 'vue-router',
-        // 'pinia'
-      ],
+      // external: [
+      //   // 'vue',
+      //   // 'vue-router',
+      //   // 'pinia'
+      // ],
     },
     // lib:{}
     manifest: true,
