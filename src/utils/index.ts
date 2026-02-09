@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+
 export function formatTargetDir(targetDir: string) {
   return targetDir.trim().replace(/\/+$/g, '')
 }

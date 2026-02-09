@@ -22,6 +22,8 @@ export default function getData({ oldData }) {
   const currentPlugin = [autoPrefix, postcssPxToRem]
   return {
     ...oldData,
-    cssPostCssPlugins: oldData.cssPostCssPlugins?.flatMap?.((plugin) => plugin).concat(currentPlugin) ?? currentPlugin
+    cssPostCssPlugins:
+      oldData.cssPostCssPlugins?.flatMap?.((plugin) => plugin).concat(currentPlugin) ??
+      currentPlugin,
   }
 }

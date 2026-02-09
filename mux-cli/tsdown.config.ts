@@ -1,5 +1,6 @@
-import { defineConfig } from 'tsdown'
 import { fileURLToPath } from 'url'
+import { defineConfig } from 'tsdown'
+
 export default defineConfig(() => {
   return {
     entry: 'src/index.ts',

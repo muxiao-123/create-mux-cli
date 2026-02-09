@@ -1,7 +1,13 @@
-import mri from 'mri'
 import path from 'node:path'
+import fs from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import mri from 'mri'
 import * as prompts from '@clack/prompts'
 import picocolors from 'picocolors'
+import ejs from 'ejs'
+
+import type { Callbacks } from '@/types'
+
 import {
   copy,
   emptyDir,
@@ -14,13 +20,10 @@ import {
   renameFiles,
   toValidPackageName,
 } from '@/utils'
-import fs from 'node:fs'
-import { fileURLToPath } from 'node:url'
 import renderTemplate from '@/utils/renderTemplate'
 import { preOrderDirectoryTraverse } from '@/utils/directoryTraverse'
-import type { Callbacks } from '@/types'
-import ejs from 'ejs'
 import { templateArr, templatePlugins, templateUI } from '@/constant'
+
 const args = mri<{
   template?: string
   help?: boolean
@@ -82,9 +85,9 @@ async function init() {
     if (!overwrite) {
       if (interactive) {
         const res = await prompts.select({
-          message:
-            (targetDir === '.' ? '当前目录' : `目标目录 "${targetDir}"`) +
-            ` 不为空. 请选择如何处理:`,
+          message: `${
+            targetDir === '.' ? '当前目录' : `目标目录 "${targetDir}"`
+          } 不为空. 请选择如何处理:`,
           options: [
             {
               label: '中止操作',
@@ -267,7 +270,7 @@ async function init() {
       copy(path.join(templateDir, file), targetPath)
     }
   }
-  write('package.json', JSON.stringify(pkg, null, 2) + '\n')
+  write('package.json', `${JSON.stringify(pkg, null, 2)}\n`)
 
   if (argImmediate) {
     console.log('开始安装请等候 ....')

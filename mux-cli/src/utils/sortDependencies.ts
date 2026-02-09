@@ -1,4 +1,5 @@
 import type { PackageJson } from 'type-fest'
+
 export default function sortDependencies(packageJson: PackageJson) {
   const sorted = {} as PackageJson
 

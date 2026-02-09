@@ -1,5 +1,5 @@
-import { Template, TemplateUI } from '@/types'
 import picocolors from 'picocolors'
+import { Template, TemplateUI } from '@/types'
 
 export const templateArr: Template[] = [
   {

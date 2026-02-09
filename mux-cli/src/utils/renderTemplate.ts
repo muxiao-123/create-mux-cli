@@ -1,9 +1,9 @@
 import * as fs from 'node:fs'
 import * as path from 'node:path'
 import { pathToFileURL } from 'node:url'
-
 import deepMerge from './deepMerge'
 import sortDependencies from './sortDependencies'
+
 import type { Callbacks } from '@/types'
 /**
  * Renders a template folder/file to the file system,
@@ -39,7 +39,7 @@ function renderTemplate(src: string, dest: string, callbacks: Callbacks) {
     console.log(existing, newPackage)
     const pkg = sortDependencies(deepMerge(existing, newPackage))
     console.log(pkg)
-    fs.writeFileSync(dest, JSON.stringify(pkg, null, 2) + '\n')
+    fs.writeFileSync(dest, `${JSON.stringify(pkg, null, 2)}\n`)
     return
   }
 
@@ -51,7 +51,7 @@ function renderTemplate(src: string, dest: string, callbacks: Callbacks) {
   if (filename === '_gitignore' && fs.existsSync(dest)) {
     const existing = fs.readFileSync(dest, 'utf8')
     const newGitignore = fs.readFileSync(src, 'utf8')
-    fs.writeFileSync(dest, existing + '\n' + newGitignore)
+    fs.writeFileSync(dest, `${existing}\n${newGitignore}`)
     return
   }
 

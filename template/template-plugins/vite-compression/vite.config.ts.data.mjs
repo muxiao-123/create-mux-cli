@@ -15,6 +15,8 @@ export default function getData({ oldData }) {
 
   return {
     ...oldData,
-    plugins: oldData.plugins?.flatMap?.((plugin) => plugin).concat([viteCompression]) ?? [viteCompression],
+    plugins: oldData.plugins?.flatMap?.((plugin) => plugin).concat([viteCompression]) ?? [
+      viteCompression,
+    ],
   }
 }
